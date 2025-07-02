@@ -5,33 +5,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Home extends AppCompatActivity {
 
 
-    Button addroombtn, disofferbtn, addofferbtn;
+    Button localbtn, disofferbtn,profilebtn,bookbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.home);
-        addroombtn = findViewById(R.id.addroombtn);
-        disofferbtn = findViewById(R.id.disofferbtn);
-        addofferbtn = findViewById(R.id.addofferbtn);
+        setContentView(R.layout.activity_home);
 
-    addroombtn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent i = new Intent(Home.this, addroom.class);
-            startActivity(i);
-            finish();
-        }
-    });
+        disofferbtn = findViewById(R.id.disofferbtn);
+        profilebtn = findViewById(R.id.profilebtn);
+        bookbtn = findViewById(R.id.bookbtn);
+        localbtn = findViewById(R.id.localbtn);
+
+
 
         disofferbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,10 +33,28 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        addofferbtn.setOnClickListener(new View.OnClickListener() {
+        profilebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Home.this, AddOffersActivity.class);
+                Intent i = new Intent(Home.this, Profile.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        bookbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Home.this, BookRoom.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        localbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Home.this, LocalAttractions.class);
                 startActivity(i);
                 finish();
             }

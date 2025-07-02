@@ -117,6 +117,22 @@
         tools:layout_editor_absoluteX="111dp"
         tools:layout_editor_absoluteY="341dp" />
     </LinearLayout>
+    <ImageView
+        android:id="@+id/roomImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="Room Image"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/selectImageBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Image"
+        android:layout_marginTop="10dp" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

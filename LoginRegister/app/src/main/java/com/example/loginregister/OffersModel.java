@@ -1,23 +1,33 @@
 package com.example.loginregister;
 
+import com.google.firebase.firestore.PropertyName;
+
 public class OffersModel {
-    String offerName;
-    int offerPrice;
+    private String offerName;
+    private int offerPrice;
 
-    public OffersModel(){
+    public OffersModel() {}
 
-    }
-
-    public OffersModel(String offerName, int offerPrice){
+    public OffersModel(String offerName, int offerPrice) {
         this.offerName = offerName;
         this.offerPrice = offerPrice;
     }
 
-    public  String GetOfferName(){
+    @PropertyName("OfferName")
+    public String getOfferName() {
         return offerName;
     }
+    @PropertyName("OfferName")
+    public void setOfferName(String offerName) {
+        this.offerName = offerName;
+    }
 
-    public int GetOfferPrice(){
+    @PropertyName("OfferPrice")
+    public int getOfferPrice() {
         return offerPrice;
+    }
+    @PropertyName("OfferPrice")
+    public void setOfferPrice(int offerPrice) {
+        this.offerPrice = offerPrice;
     }
 }

@@ -13,7 +13,25 @@
         android:theme="@style/Theme.LoginRegister"
         tools:targetApi="31">
         <activity
+            android:name=".LocalAttractions"
+            android:exported="false" />
+        <activity
+            android:name=".AdminHome"
+            android:exported="false" />
+        <activity
+            android:name=".BookRoom"
+            android:exported="false" />
+        <activity
+            android:name=".Events"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
             android:name=".offersDisplayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddOffersActivity"
             android:exported="false" />
         <activity
             android:name=".addroom"
@@ -35,7 +53,7 @@
             android:exported="false" />
         <activity
             android:name=".Register"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>

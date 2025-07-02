@@ -8,16 +8,9 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="24dp"
-    tools:context=".Home">
+    tools:context=".AdminHome">
 
     <!-- App Icon -->
-    <ImageView
-        android:id="@+id/appIcon"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="80dp"
-        android:src="@drawable/ic_launcher_foreground"
-        android:contentDescription="App Icon" />
 
     <!-- Welcome Text -->
     <TextView
@@ -42,17 +35,7 @@
         android:backgroundTint="#6200EE"
         android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/disofferbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginHorizontal="16dp"
-        android:text="Display Offers"
-        android:textAllCaps="false"
-        android:textStyle="bold"
-        android:backgroundTint="#6200EE"
-        android:textColor="#FFFFFF" />
+
 
     <Button
         android:id="@+id/addofferbtn"
@@ -66,18 +49,30 @@
         android:backgroundTint="#6200EE"
         android:textColor="#FFFFFF" />
 
-    <!-- Logout Button -->
     <Button
-        android:id="@+id/logoutBtn"
+        android:id="@+id/profilebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginHorizontal="16dp"
-        android:text="Logout"
+        android:text="Profile"
         android:textAllCaps="false"
         android:textStyle="bold"
         android:backgroundTint="#6200EE"
         android:textColor="#FFFFFF" />
 
+
+
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#6200EE"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
 </LinearLayout>

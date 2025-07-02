@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
         logemailtxt = findViewById(R.id.logemailtxt);
         logpasstxt = findViewById(R.id.logpasstxt);
         logregbtn = findViewById(R.id.logregbtn);
@@ -70,14 +70,20 @@ public class Login extends AppCompatActivity {
                 .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-
-
+                        if(logemailtxt.getText().toString().equals("admin@gmail.com")  )
+                        {
+                            Intent i = new Intent(Login.this, AdminHome.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        else
+                        {
                             Intent i = new Intent(Login.this, Home.class);
                             startActivity(i);
                             finish();
-
                         }
+
+
 
                     }
                 }).addOnFailureListener(new OnFailureListener() {

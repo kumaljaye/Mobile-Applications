@@ -14,7 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
@@ -33,7 +32,7 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
+        setContentView(R.layout.activity_register);
         emailtxt = findViewById(R.id.emailtxt);
         passtxt = findViewById(R.id.passtxt);
         confirmtxt = findViewById(R.id.confirmtxt);
@@ -95,25 +94,26 @@ public class Register extends AppCompatActivity {
         auth.createUserWithEmailAndPassword(emailtxt.getText().toString(), passtxt.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task)
-                    {
+                    public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            HashMap<Object, String> hashMap = new HashMap<>();
+                            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                            HashMap<String, String> hashMap = new HashMap<>();
                             hashMap.put("Email", emailtxt.getText().toString());
-                            hashMap.put("Password", passtxt.getText().toString());
                             hashMap.put("Name", nametxt.getText().toString());
                             hashMap.put("Phone", phonetxt.getText().toString());
 
-                            DocumentReference docRef = fs.collection("Register").document(emailtxt.getText().toString());
-                            docRef.set(hashMap, SetOptions.merge());
+                            FirebaseFirestore.getInstance()
+                                    .collection("users")
+                                    .document(uid)
+                                    .set(hashMap, SetOptions.merge());
+
+                            Toast.makeText(Register.this, "Registration Successful", Toast.LENGTH_SHORT).show();
 
                             Intent i = new Intent(Register.this, Login.class);
                             startActivity(i);
                             finish();
-
-                        }
-                        else {
-                            // Add this to see what went wrong
+                        } else {
                             Exception e = task.getException();
                             e.printStackTrace();
                             Toast.makeText(Register.this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();

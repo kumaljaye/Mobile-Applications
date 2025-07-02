@@ -32,8 +32,8 @@ public class OffersLVAdapter extends ArrayAdapter<OffersModel>
         TextView offerprice = listitemView.findViewById(R.id.offerpricetxt);
 
 
-        offername.setText(offeresModel.GetOfferName());
-        offerprice.setText(offeresModel.GetOfferPrice());
+        offername.setText(offeresModel.getOfferName());
+        offerprice.setText(String.format("LKR %d", offeresModel.getOfferPrice()));
 
         return  listitemView;
     }

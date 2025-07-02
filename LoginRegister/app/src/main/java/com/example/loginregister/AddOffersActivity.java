@@ -39,9 +39,19 @@ public class AddOffersActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                HashMap<Object, String> hashMap = new HashMap<>();
+                HashMap<String, Object> hashMap = new HashMap<>();
                 hashMap.put("OfferName", name.getText().toString());
-                hashMap.put("OfferPrice", price.getText().toString());
+
+                int offerPrice = 0;
+                try {
+                    offerPrice = Integer.parseInt(price.getText().toString());
+                } catch (NumberFormatException e) {
+                    // TODO: Show error to user, or handle as needed
+                    price.setError("Enter a valid number");
+                    return;
+                }
+                hashMap.put("OfferPrice", offerPrice);
+
                 DocumentReference docref = fs.collection("Offeres")
                         .document(id.getText().toString());
                 docref.set(hashMap, SetOptions.merge());

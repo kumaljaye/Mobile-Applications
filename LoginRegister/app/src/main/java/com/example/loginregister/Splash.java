@@ -12,7 +12,7 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.spalsh);
+        setContentView(R.layout.activity_spalsh);
 
         new Handler().postDelayed(new Runnable() {
             @Override
