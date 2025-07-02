@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "868442079101",
+    "project_id": "data-and-pictures",
+    "storage_bucket": "data-and-pictures.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868442079101:android:7c34991574bd6adda15614",
+        "android_client_info": {
+          "package_name": "com.example.dataandpictures"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoSSGKxw0rZkYd6_fMw3mDL9-bVN3v3aY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
