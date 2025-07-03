@@ -50,12 +50,12 @@
         android:textColor="#FFFFFF" />
 
     <Button
-        android:id="@+id/profilebtn"
+        android:id="@+id/addeventbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginHorizontal="16dp"
-        android:text="Profile"
+        android:text="Add Events"
         android:textAllCaps="false"
         android:textStyle="bold"
         android:backgroundTint="#6200EE"

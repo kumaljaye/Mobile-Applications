@@ -31,7 +31,7 @@ import java.util.HashMap;
 
 public class addroom extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    Button addbtn, cancelbtn, selectImageBtn;
+    Button addbtn, homebtn, selectImageBtn;
     EditText roomnotxt, bedstxt, pricetxt;
     RadioGroup acnonac;
     Spinner spin;
@@ -52,7 +52,7 @@ public class addroom extends AppCompatActivity implements AdapterView.OnItemSele
         // UI Components
         spin = findViewById(R.id.spinner);
         addbtn = findViewById(R.id.addbtn);
-        cancelbtn = findViewById(R.id.cancelbtn);
+        homebtn = findViewById(R.id.homebtn);
         selectImageBtn = findViewById(R.id.selectImageBtn);
         roomnotxt = findViewById(R.id.roomnotxt);
         bedstxt = findViewById(R.id.bedstxt);
@@ -115,7 +115,13 @@ public class addroom extends AppCompatActivity implements AdapterView.OnItemSele
                     .addOnFailureListener(e -> Toast.makeText(addroom.this, "Failed to add room", Toast.LENGTH_SHORT).show());
         });
 
-        cancelbtn.setOnClickListener(view -> finish());
+        homebtn.setOnClickListener(v -> {
+            Intent i = new Intent(addroom.this, AdminHome.class);
+            startActivity(i);
+            finish();
+        });
+
+
     }
 
     private void convertImageToBase64(Uri imageUri) {

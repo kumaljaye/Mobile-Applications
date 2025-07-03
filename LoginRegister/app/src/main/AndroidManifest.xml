@@ -13,6 +13,15 @@
         android:theme="@style/Theme.LoginRegister"
         tools:targetApi="31">
         <activity
+            android:name=".BookServicesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewEventsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddEvent"
+            android:exported="false" />
+        <activity
             android:name=".LocalAttractions"
             android:exported="false" />
         <activity

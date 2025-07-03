@@ -22,7 +22,7 @@ public class offersDisplayActivity extends AppCompatActivity {
     ArrayList<OffersModel> offeresModelArrayList;
     ListView offeresLV;
 
-    Button homebtn,bookbtn;
+    Button homebtn;
     FirebaseAuth auth;
     FirebaseFirestore fs;
     @Override
@@ -32,7 +32,7 @@ public class offersDisplayActivity extends AppCompatActivity {
 
         offeresLV = findViewById(R.id.offerslist);
         homebtn = findViewById(R.id.homebtn);
-        bookbtn = findViewById(R.id.bookbtn);
+
         fs = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
 

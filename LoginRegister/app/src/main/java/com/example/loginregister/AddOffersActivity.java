@@ -61,7 +61,7 @@ public class AddOffersActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AddOffersActivity.this, Home.class);
+                Intent i = new Intent(AddOffersActivity.this, AdminHome.class);
                 startActivity(i);
                 finish();
             }

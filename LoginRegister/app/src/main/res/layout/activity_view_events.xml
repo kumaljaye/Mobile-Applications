@@ -7,9 +7,9 @@
     tools:context=".offersDisplayActivity"
     android:padding="16dp">
 
-    <!-- Offers List -->
+    <!-- Event List -->
     <ListView
-        android:id="@+id/offerslist"
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -25,6 +25,8 @@
         android:gravity="center"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp">
+
+
 
         <Button
             android:id="@+id/homebtn"
